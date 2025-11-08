@@ -14,6 +14,11 @@ if ! command -v hatch &> /dev/null; then
     brew install hatch
 fi
 
+# Install git-flow if not available
+if ! git flow version &> /dev/null; then
+    brew install git-flow-avh
+fi
+
 git init --initial-branch=main
 
 if [ "{{ cookiecutter.remote_origin_url }}" != "https://git@github.com:user_name/repository_name.git" ]; then
