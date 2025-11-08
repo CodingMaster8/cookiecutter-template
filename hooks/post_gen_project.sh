@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-pip3 install -q uv
-uv pip install -q pre-commit hatch
+# Install tools using Homebrew (avoids externally managed environment issues)
+if ! command -v uv &> /dev/null; then
+    brew install uv
+fi
+
+if ! command -v pre-commit &> /dev/null; then
+    brew install pre-commit
+fi
+
+if ! command -v hatch &> /dev/null; then
+    brew install hatch
+fi
 
 git init --initial-branch=main
 
@@ -10,7 +20,7 @@ if [ "{{ cookiecutter.remote_origin_url }}" != "https://git@github.com:user_name
   git remote add origin "{{ cookiecutter.remote_origin_url }}"
 fi
 
-uv run pre-commit install
+pre-commit install
 cp .githooks/post-checkout .git/hooks/post-checkout
 chmod +x .git/hooks/post-checkout
 echo "Custom post-checkout hook installed into .git/hooks."
