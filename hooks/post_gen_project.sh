@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-pip install -q uv
+pip3 install -q uv
 uv pip install -q pre-commit hatch
 
 git init --initial-branch=main

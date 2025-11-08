@@ -11,7 +11,7 @@ repos:
       - id: check-merge-conflict
       - id: check-docstring-first
       - id: requirements-txt-fixer
-        files : (requirements|requirements_kuona|requirements_deploy)\.txt$
+        files : (requirements|requirements_test|requirements_deploy)\.txt$
 
 #  - repo: https://github.com/astral-sh/ruff-pre-commit
 #    rev: v0.12.0
