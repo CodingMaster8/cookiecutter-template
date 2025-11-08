@@ -1,7 +1,7 @@
 {
-    "full_name": "Mario Garrido",
-    "email": "mg@czacki.com",
-    "username": "mgczacki",
+    "full_name": "Pablo Vargas",
+    "email": "a00344869@tec.mx",
+    "username": "codingmaster8",
     "project_name": "A project",
     "dist_name": "{{cookiecutter.project_name.lower().replace(' ', '-')}}",
     "package_name": "{{cookiecutter.dist_name.replace('-', '_')}}",
